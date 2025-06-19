@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>我的极简博客</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on 我的极简博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Jun 2024 22:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>你好，世界</title>
+      <link>http://localhost:1313/posts/hello-world-copy/</link>
+      <pubDate>Wed, 19 Jun 2024 22:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hello-world-copy/</guid>
+      <description>我的第一篇极简博客文章，测试苹果风格博客系统。</description>
+    </item>
+    <item>
+      <title>你好，世界</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Wed, 19 Jun 2024 22:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>我的第一篇极简博客文章，测试苹果风格博客系统。</description>
+    </item>
+  </channel>
+</rss>

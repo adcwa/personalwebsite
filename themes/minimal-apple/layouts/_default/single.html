@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <div style="color:#888;font-size:0.95rem;margin-bottom:2rem;">{{ .Date.Format "2006-01-02" }}</div>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+  <div style="margin-top:3rem;"><a href="/">← 返回首页</a></div>
+{{ end }} 

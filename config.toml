@@ -1,0 +1,12 @@
+baseURL = 'https://example.org/'
+languageCode = 'zh-cn'
+title = '我的极简博客'
+author = '你的名字'
+theme = 'minimal-apple'
+
+[params]
+  description = '一个极简风格、苹果官网风格的私人博客，仅供自己使用。'
+  robots = 'noindex, nofollow'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

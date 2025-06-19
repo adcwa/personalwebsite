@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Site.Title }}</h1>
+  <p>{{ .Site.Params.description }}</p>
+  <ul style="list-style:none;padding:0;">
+    {{ range .Pages }}
+      <li style="margin-bottom:2.5rem;">
+        <a href="{{ .RelPermalink }}" style="font-size:1.3rem;font-weight:500;">{{ .Title }}</a>
+        <div style="color:#888;font-size:0.95rem;margin:0.3rem 0 0.7rem;">{{ .Date.Format "2006-01-02" }}</div>
+        <div style="color:#444;line-height:1.6;">{{ .Summary }}</div>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }} 
