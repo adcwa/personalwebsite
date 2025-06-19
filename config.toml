@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-cn'
 title = '我的极简博客'
-author = '你的名字'
+author = '神神叨叨'
 theme = 'minimal-apple'
 
 [params]

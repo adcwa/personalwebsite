@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>我的极简博客</title>
+  <meta name="description" content="一个极简风格、苹果官网风格的私人博客，仅供自己使用。">
+  <link rel="stylesheet" href="/css/minimal-apple.css">
+  <style>
+    html { font-size: 16px; }
+    body { margin: 0; padding: 0; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background: #fff; color: #111; }
+    .container { max-width: 700px; margin: 0 auto; padding: 2rem 1rem; }
+    a { color: #0071e3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3, h4, h5, h6 { font-weight: 600; margin: 2rem 0 1rem; }
+    p { line-height: 1.7; margin: 1rem 0; }
+    @media (max-width: 600px) {
+      .container { padding: 1rem 0.5rem; }
+      html { font-size: 15px; }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    
+  <h1>私人博客 Hugo 快速复刻 Prompt</h1>
+  <div style="color:#888;font-size:0.95rem;margin-bottom:2rem;">2025-06-19</div>
+  <div class="post-content">
+    <h1 id="极简苹果风格私人博客-hugo-快速复刻-prompt">极简苹果风格私人博客 Hugo 快速复刻 Prompt</h1>
+<h2 id="文章摘要">文章摘要</h2>
+<p>本篇文章总结了如何用 Hugo 快速搭建一个极简、苹果官网风格、支持本地 Markdown 内容维护、适配移动端、禁止搜索引擎收录的私人博客。文末附有一条可直接复用的 AI Prompt，助你一键复刻同款网站。</p>
+<hr>
+<h2 id="需求与风格">需求与风格</h2>
+<ul>
+<li>只为自己用，不公开、不分享、不被搜索引擎收录</li>
+<li>内容通过本地 Markdown 文件维护</li>
+<li>极简风格，参考苹果官网（Apple.com）设计</li>
+<li>响应式，适配手机端</li>
+<li>无需登录、评论、社交等功能</li>
+<li>支持一键部署到 Vercel（或 Netlify 等平台）</li>
+</ul>
+<hr>
+<h2 id="技术选型">技术选型</h2>
+<ul>
+<li>静态站点生成器：Hugo</li>
+<li>主题：自定义极简苹果风格</li>
+<li>内容维护：本地 Markdown</li>
+<li>部署：Vercel 自动识别 Hugo，无需自定义 builder</li>
+</ul>
+<hr>
+<h2 id="复刻-prompt可直接用于-ai-或-copilot">复刻 Prompt（可直接用于 AI 或 Copilot）</h2>
+<pre tabindex="0"><code>请帮我设计并实现一个极简风格、苹果官网风格的私人博客网站，要求如下：
+
+- 只为我个人使用，不对外公开，不需要登录、评论、社交等功能
+- 内容通过本地 Markdown 文件维护，支持文章列表和详情页
+- 整体风格极简，参考 Apple 官网，留白充足、优雅字体、黑白灰主色调、少量高质量图片
+- 响应式设计，适配手机端
+- 禁止搜索引擎收录（robots.txt 和 meta noindex）
+- 使用 Hugo 作为静态站点生成器，自动生成静态页面
+- 支持一键部署到 Vercel（或 Netlify），无需自定义 builder，直接让 Vercel 自动识别 Hugo 项目
+- 提供 README，说明内容维护和部署流程
+
+请直接生成项目结构、主题模板、基础样式、示例文章和 README，确保我只需写 Markdown 并 push 到 GitHub 即可一键上线。
+</code></pre><hr>
+<h2 id="快速搭建流程">快速搭建流程</h2>
+<ol>
+<li>安装 Hugo 并初始化项目</li>
+<li>创建极简苹果风格主题（layouts、static/css、基础模板）</li>
+<li>配置 <code>config.toml</code>，设置 noindex、站点信息</li>
+<li>添加 <code>static/robots.txt</code> 禁止爬虫</li>
+<li>写 Markdown 文章，放入 <code>content/posts/</code></li>
+<li>本地 <code>hugo server</code> 预览</li>
+<li>push 到 GitHub，Vercel 自动识别并部署</li>
+</ol>
+<hr>
+<h2 id="结语">结语</h2>
+<p>只需保存并复用上方 Prompt，每次都能一键生成同款极简苹果风格私人博客。<br>
+如需自定义样式，编辑 <code>themes/minimal-apple/static/css/minimal-apple.css</code> 即可。</p>
+<blockquote>
+<p>仅供个人使用，勿外传。</p></blockquote>
+
+  </div>
+  <div style="margin-top:3rem;"><a href="/">← 返回首页</a></div>
+
+  </div>
+</body>
+</html> 
