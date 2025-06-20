@@ -4,18 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>我的极简博客</title>
   <meta name="description" content="一个极简风格、苹果官网风格的私人博客，仅供自己使用。">
+  <meta name="author" content="神神叨叨">
   
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  
+  <title>我的极简博客</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin="">
+  
   <link
     rel="stylesheet"
-    as="style"
-    onload="this.rel='stylesheet'"
     href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
-  />
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    media="print" onload="this.media='all'"
+  >
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
+    >
+  </noscript>
+  
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  
+  <script>
+    
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'script';
+    link.href = 'https://cdn.tailwindcss.com?plugins=forms,container-queries';
+    document.head.appendChild(link);
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" defer></script>
   
   <link rel="stylesheet" href="/css/minimal-apple.css">
   
@@ -23,10 +46,11 @@
 <body>
   <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
-      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3" role="banner">
         <div class="flex items-center gap-4 text-[#111418]">
-          <div class="size-4">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="size-4" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+              <title id="logo-title">网站Logo</title>
               <path
                 d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"
                 fill="currentColor"
@@ -41,16 +65,16 @@
           </div>
           <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">我的极简博客</h2>
         </div>
-        <div class="flex flex-1 justify-end gap-8">
+        <nav class="flex flex-1 justify-end gap-8" role="navigation" aria-label="主导航">
           <div class="flex items-center gap-9">
-            <a class="text-[#111418] text-sm font-medium leading-normal" href="/">首页</a>
-            <a class="text-[#111418] text-sm font-medium leading-normal" href="/posts/">文章</a>
-            <a class="text-[#111418] text-sm font-medium leading-normal" href="#about">关于</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="/" aria-label="首页">首页</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="/posts/" aria-label="文章列表">文章</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="#about" aria-label="关于页面">关于</a>
           </div>
-        </div>
+        </nav>
       </header>
       
-      <div class="px-40 flex flex-1 justify-center py-5">
+      <main class="px-40 flex flex-1 justify-center py-5" role="main">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
           
   <div class="flex flex-col gap-6 px-4 py-6">
@@ -146,9 +170,9 @@
   
 
         </div>
-      </div>
+      </main>
       
-      <footer class="flex justify-center">
+      <footer class="flex justify-center" role="contentinfo">
         <div class="flex max-w-[960px] flex-1 flex-col">
           <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
             <p class="text-[#60758a] text-base font-normal leading-normal">© 2024 我的极简博客. 一个极简风格、苹果官网风格的私人博客，仅供自己使用。</p>
@@ -157,5 +181,28 @@
       </footer>
     </div>
   </div>
+
+  
+  <script>
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          }
+        });
+      });
+      
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  </script>
 </body>
 </html> 
