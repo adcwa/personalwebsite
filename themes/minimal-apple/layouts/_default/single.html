@@ -1,8 +1,109 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <div style="color:#888;font-size:0.95rem;margin-bottom:2rem;">{{ .Date.Format "2006-01-02" }}</div>
-  <div class="post-content">
-    {{ .Content }}
+  <div class="flex flex-col gap-6 px-4 py-6">
+    <!-- Article Header -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-[#111418] text-4xl font-black leading-tight tracking-[-0.033em]">{{ .Title }}</h1>
+      <div class="flex items-center gap-4 text-[#60758a] text-sm font-normal leading-normal">
+        <span>{{ .Date.Format "2006年01月02日" }}</span>
+        {{ if .Params.author }}
+          <span>•</span>
+          <span>{{ .Params.author }}</span>
+        {{ end }}
+        {{ if .ReadingTime }}
+          <span>•</span>
+          <span>{{ .ReadingTime }}分钟阅读</span>
+        {{ end }}
+      </div>
+      {{ if .Summary }}
+        <p class="text-[#60758a] text-lg font-normal leading-normal">{{ .Summary }}</p>
+      {{ end }}
+    </div>
+
+    <!-- Featured Image -->
+    {{ if .Params.image }}
+      <div class="w-full">
+        <img
+          src="{{ .Params.image }}"
+          alt="{{ .Title }}"
+          class="w-full h-auto max-h-96 object-cover rounded-lg"
+        />
+      </div>
+    {{ end }}
+
+    <!-- Article Content -->
+    <div class="prose max-w-none">
+      <div class="post-content text-[#111418] text-base font-normal leading-normal">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <!-- Article Tags -->
+    {{ if .Params.tags }}
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-[#dbe0e6]">
+        <span class="text-[#60758a] text-sm font-medium">标签：</span>
+        {{ range .Params.tags }}
+          <span class="bg-[#f0f2f5] text-[#111418] text-sm font-medium px-3 py-1 rounded-full">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <!-- Navigation -->
+    <div class="flex items-center justify-between pt-6 border-t border-[#dbe0e6]">
+      <a href="/" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="currentColor" viewBox="0 0 256 256" class="mr-2">
+          <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+        返回首页
+      </a>
+      
+      <div class="flex items-center gap-4">
+        {{ if .NextInSection }}
+          <a href="{{ .NextInSection.RelPermalink }}" class="text-[#0c7ff2] text-sm font-medium hover:underline">
+            下一篇 →
+          </a>
+        {{ end }}
+        {{ if .PrevInSection }}
+          <a href="{{ .PrevInSection.RelPermalink }}" class="text-[#0c7ff2] text-sm font-medium hover:underline">
+            ← 上一篇
+          </a>
+        {{ end }}
+      </div>
+    </div>
   </div>
-  <div style="margin-top:3rem;"><a href="/">← 返回首页</a></div>
+
+  <!-- Related Articles -->
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ if $related }}
+    <div class="border-t border-[#dbe0e6] mt-8 pt-8">
+      <h3 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">相关文章</h3>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-3 p-4">
+        {{ range $related }}
+          <div class="flex flex-col gap-3 card">
+            {{ if .Params.image }}
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                style='background-image: url("{{ .Params.image }}");'
+              ></div>
+            {{ else }}
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                style='background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80");'
+              ></div>
+            {{ end }}
+            <div>
+              <h4 class="text-[#111418] text-base font-medium leading-normal article-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h4>
+              <div class="text-[#60758a] text-sm font-normal leading-normal article-meta">
+                {{ .Date.Format "2006年01月02日" }}
+              </div>
+              <p class="text-[#60758a] text-sm font-normal leading-normal article-summary">
+                {{ .Summary }}
+              </p>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
 {{ end }} 

@@ -4,39 +4,180 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>我的极简博客</title>
   <meta name="description" content="一个极简风格、苹果官网风格的私人博客，仅供自己使用。">
+  <meta name="author" content="神神叨叨">
+  
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  
+  <title>我的极简博客</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin="">
+  
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
+    media="print" onload="this.media='all'"
+  >
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
+    >
+  </noscript>
+  
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+  
+  <script>
+    
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'script';
+    link.href = 'https://cdn.tailwindcss.com?plugins=forms,container-queries';
+    document.head.appendChild(link);
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" defer></script>
+  
   <link rel="stylesheet" href="/css/minimal-apple.css">
-  <style>
-    html { font-size: 16px; }
-    body { margin: 0; padding: 0; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background: #fff; color: #111; }
-    .container { max-width: 700px; margin: 0 auto; padding: 2rem 1rem; }
-    a { color: #0071e3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1, h2, h3, h4, h5, h6 { font-weight: 600; margin: 2rem 0 1rem; }
-    p { line-height: 1.7; margin: 1rem 0; }
-    @media (max-width: 600px) {
-      .container { padding: 1rem 0.5rem; }
-      html { font-size: 15px; }
-    }
-  </style>
   
 </head>
 <body>
-  <div class="container">
-    
-  <h1>我的极简博客</h1>
-  <p>一个极简风格、苹果官网风格的私人博客，仅供自己使用。</p>
-  <ul style="list-style:none;padding:0;">
-    
-      <li style="margin-bottom:2.5rem;">
-        <a href="/prompts/website%E5%A4%8D%E5%88%BB/" style="font-size:1.3rem;font-weight:500;">1.复刻当前网站的Prompt</a>
-        <div style="color:#888;font-size:0.95rem;margin:0.3rem 0 0.7rem;">2025-06-19</div>
-        <div style="color:#444;line-height:1.6;">私人博客 Hugo 快速复刻 Prompt</div>
-      </li>
-    
-  </ul>
-
+  <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3" role="banner">
+        <div class="flex items-center gap-4 text-[#111418]">
+          <div class="size-4" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+              <title id="logo-title">网站Logo</title>
+              <path
+                d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"
+                fill="currentColor"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">我的极简博客</h2>
+        </div>
+        <nav class="flex flex-1 justify-end gap-8" role="navigation" aria-label="主导航">
+          <div class="flex items-center gap-9">
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="/" aria-label="首页">首页</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="/posts/" aria-label="文章列表">文章</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal" href="#about" aria-label="关于页面">关于</a>
+          </div>
+        </nav>
+      </header>
+      
+      <main class="px-40 flex flex-1 justify-center py-5" role="main">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          
+  <div class="@container">
+    <div class="@[480px]:p-4">
+      <div
+        class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10 hero-section"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80");'
+      >
+        <div class="flex flex-col gap-2 text-left">
+          <h1
+            class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] hero-title"
+          >
+            我的极简博客
+          </h1>
+          <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal hero-subtitle">
+            一个极简风格、苹果官网风格的私人博客，仅供自己使用。
+          </h2>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">最新文章</h2>
+  
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-3 p-4 card-grid">
+    
+      <div class="flex flex-col gap-3 pb-3 card">
+        
+          <div
+            class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+            style='background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80");'
+          ></div>
+        
+        <div>
+          <h3 class="text-[#111418] text-base font-medium leading-normal article-title">
+            <a href="/prompts/website%E5%A4%8D%E5%88%BB/">1.复刻当前网站的Prompt</a>
+          </h3>
+          <div class="text-[#60758a] text-sm font-normal leading-normal article-meta">
+            2025年06月19日
+          </div>
+          <p class="text-[#60758a] text-sm font-normal leading-normal article-summary">
+            私人博客 Hugo 快速复刻 Prompt
+          </p>
+        </div>
+      </div>
+    
+  </div>
+
+  
+  <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">关于作者</h2>
+  <div class="flex p-4 @container">
+    <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+      <div class="flex gap-4">
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+          style='background-image: url("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80");'
+        ></div>
+        <div class="flex flex-col justify-center">
+          <p class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em]">神神叨叨</p>
+          <p class="text-[#60758a] text-base font-normal leading-normal">博客作者</p>
+          <p class="text-[#60758a] text-base font-normal leading-normal">
+            一个极简风格、苹果官网风格的私人博客，仅供自己使用。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+        </div>
+      </main>
+      
+      <footer class="flex justify-center" role="contentinfo">
+        <div class="flex max-w-[960px] flex-1 flex-col">
+          <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+            <p class="text-[#60758a] text-base font-normal leading-normal">© 2024 我的极简博客. 一个极简风格、苹果官网风格的私人博客，仅供自己使用。</p>
+          </footer>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  
+  <script>
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          }
+        });
+      });
+      
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  </script>
 </body>
 </html> 

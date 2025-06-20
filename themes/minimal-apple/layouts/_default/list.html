@@ -1,13 +1,73 @@
 {{ define "main" }}
-  <h1>{{ .Site.Title }}</h1>
-  <p>{{ .Site.Params.description }}</p>
-  <ul style="list-style:none;padding:0;">
+  <div class="@container">
+    <div class="@[480px]:p-4">
+      <div
+        class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10 hero-section"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80");'
+      >
+        <div class="flex flex-col gap-2 text-left">
+          <h1
+            class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] hero-title"
+          >
+            {{ .Site.Title }}
+          </h1>
+          <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal hero-subtitle">
+            {{ .Site.Params.description }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">最新文章</h2>
+  
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-3 p-4 card-grid">
     {{ range .Pages }}
-      <li style="margin-bottom:2.5rem;">
-        <a href="{{ .RelPermalink }}" style="font-size:1.3rem;font-weight:500;">{{ .Title }}</a>
-        <div style="color:#888;font-size:0.95rem;margin:0.3rem 0 0.7rem;">{{ .Date.Format "2006-01-02" }}</div>
-        <div style="color:#444;line-height:1.6;">{{ .Summary }}</div>
-      </li>
+      <div class="flex flex-col gap-3 pb-3 card">
+        {{ if .Params.image }}
+          <div
+            class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+            style='background-image: url("{{ .Params.image }}");'
+          ></div>
+        {{ else }}
+          <div
+            class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+            style='background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80");'
+          ></div>
+        {{ end }}
+        <div>
+          <h3 class="text-[#111418] text-base font-medium leading-normal article-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <div class="text-[#60758a] text-sm font-normal leading-normal article-meta">
+            {{ .Date.Format "2006年01月02日" }}
+          </div>
+          <p class="text-[#60758a] text-sm font-normal leading-normal article-summary">
+            {{ .Summary }}
+          </p>
+        </div>
+      </div>
     {{ end }}
-  </ul>
+  </div>
+
+  {{ if .Site.Params.author }}
+  <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">关于作者</h2>
+  <div class="flex p-4 @container">
+    <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+      <div class="flex gap-4">
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+          style='background-image: url("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80");'
+        ></div>
+        <div class="flex flex-col justify-center">
+          <p class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em]">{{ .Site.Params.author }}</p>
+          <p class="text-[#60758a] text-base font-normal leading-normal">博客作者</p>
+          <p class="text-[#60758a] text-base font-normal leading-normal">
+            {{ .Site.Params.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
 {{ end }} 
